@@ -33,7 +33,8 @@ const autoLoad = () => {
     let memPosition =0;
     for(let i = 0; i < maxLenght; i++){
         memPosition++;
-        let random = Math.floor(Math.random() * memPosition)
+        let random = Math.floor(Math.random() * maxLenght);
+        console.log(random);
         storageStatus[random] = true;
 }
     //Ultima posição ocupada para indicar final de fita
