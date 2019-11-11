@@ -1,6 +1,6 @@
 // Tamanho do vetor; Numeração das posições; 
 // Status de vazio ou ocupado(boolean); Localização e tamanho de espaços livres
-const maxLenght = 31;
+const maxLenght = 32;
 const totalStorage = [];
 var storageStatus = [];
 var refPoints = [];
@@ -76,13 +76,25 @@ const render = () => {
         html += '<tr>'
         for(let column = 0; column < maxLenght; column++){
             if(storageStatus[column] === true){
-                html+= '<td style="background-color:red">';
-                html+=`${totalStorage[indexMemory]}`
-                html+='</td>';
+                if(column === maxLenght-1){
+                    html+= '<td style="background-color:black; color: white">';
+                    html+="$$"
+                    html+='</td>';
+                }else{
+                    html+= '<td style="background-color:red">';
+                    html+=`${totalStorage[indexMemory]}`
+                    html+='</td>';
+                }
             }else{
-                html+= '<td>';
-                html+=`${totalStorage[indexMemory]}`
-                html+='</td>';   
+                if(column === maxLenght-1){
+                    html+= '<td>';
+                    html+="$$";
+                    html+='</td>';    
+                }else{
+                    html+= '<td>';
+                    html+=`${totalStorage[indexMemory]}`
+                    html+='</td>';
+                }   
             }
             indexMemory++;
         }
