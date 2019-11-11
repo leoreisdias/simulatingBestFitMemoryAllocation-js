@@ -29,7 +29,10 @@ input {
     margin-bottom: 30px;
     padding: 8px;
     border-radius: 8px;
-    width: 200px;
+    width: 280px;
+    font-family: 'Impact';
+    font-size: 32px;
+    color: green;
 }
 
 button{
