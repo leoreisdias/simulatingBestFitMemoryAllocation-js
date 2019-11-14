@@ -30,11 +30,8 @@ createStructure = () => {
 
 const autoLoad = () => {
     //Gera posições aleatórias para se ocupar a partir de função random()
-    let memPosition =0;
     for(let i = 0; i < maxLenght; i++){
-        memPosition++;
         let random = Math.floor(Math.random() * maxLenght);
-        console.log(random);
         storageStatus[random] = true;
 }
     //Ultima posição ocupada para indicar final de fita
@@ -72,7 +69,6 @@ const render = () => {
     //Joga a partir do JavaScript elementos de tabela na div do html
     //Caso o storageStatus em determinada posição for true, a celula da tabela será pintada
     //Se não, ficará em branco
-    let indexMemory=0;
     let html = '<table cellpadding=0 cellspacing=0>';
         html += '<tr>'
         for(let column = 0; column < maxLenght; column++){
@@ -83,7 +79,7 @@ const render = () => {
                     html+='</td>';
                 }else{
                     html+= '<td style="background-color:red">';
-                    html+=`${totalStorage[indexMemory]}`
+                    html+=`${totalStorage[column]}`
                     html+='</td>';
                 }
             }else{
@@ -93,11 +89,10 @@ const render = () => {
                     html+='</td>';    
                 }else{
                     html+= '<td>';
-                    html+=`${totalStorage[indexMemory]}`
+                    html+=`${totalStorage[column]}`
                     html+='</td>';
                 }   
             }
-            indexMemory++;
         }
         
         html += '</tr>'
