@@ -107,7 +107,13 @@ start();
 const search = () =>{
     //Pega o valor do Input, garante a conversão para númerico e utiliza
     const inputValue = Number(document.querySelector('input#memoryInput').value);
+    console.log(inputValue);
+    if(inputValue <= 0){
+        window.alert("Por favor, digite um valor maior que ZERO");
+        document.querySelector('input#memoryInput').value = '';
 
+        return;
+    }
     //Apaga o campo do input ao pegar o valor anteriormente colocado
     document.querySelector('input#memoryInput').value = '';
 
@@ -145,3 +151,4 @@ const allocate = (inputValue) => {
 
 //Acrescenta a função de busca ao botão
 document.querySelector('button').onclick = search;
+document.querySelector('input#memoryInput').focus();
